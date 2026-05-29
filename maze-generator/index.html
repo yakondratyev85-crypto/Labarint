@@ -32,27 +32,6 @@
         </select>
       </label>
 
-      <label>Maze Mode
-        <select id="mazeMode">
-          <option value="classic">Classic</option>
-          <option value="kidsEasy">Kids Easy</option>
-          <option value="puzzle">Puzzle</option>
-          <option value="longPath">Long Path</option>
-          <option value="printClean">Print Clean</option>
-        </select>
-      </label>
-
-      <label>Age Preset
-        <select id="agePreset">
-          <option value="custom">Custom / manual</option>
-          <option value="age45">4–5 years</option>
-          <option value="age67">6–7 years</option>
-          <option value="age89">8–9 years</option>
-          <option value="age10">10+ years</option>
-          <option value="adults">Adults</option>
-        </select>
-      </label>
-
       <label>Difficulty
         <select id="difficulty">
           <option value="veryEasy">Very Easy</option>
@@ -63,18 +42,8 @@
         </select>
       </label>
 
-      <label>Start / Finish Position
-        <select id="startFinish">
-          <option value="corners">corners</option>
-          <option value="leftRight">left-to-right</option>
-          <option value="topBottom">top-to-bottom</option>
-          <option value="randomEdges">random edges</option>
-          <option value="longestPath">longest path</option>
-        </select>
-      </label>
-
       <div class="grid-two">
-        <label>Width
+        <label>Width / Size
           <input id="mazeWidth" type="number" min="6" max="80" value="24">
         </label>
         <label>Height
@@ -82,28 +51,22 @@
         </label>
       </div>
 
-      <div class="grid-two">
-        <label>Wall Thickness
-          <input id="wallThickness" type="number" min="1" max="12" value="3">
-        </label>
-        <label>Cell Size
-          <input id="cellSize" type="number" min="12" max="60" value="28">
-        </label>
-      </div>
+      <label>Wall Thickness
+        <input id="wallThickness" type="number" min="1" max="12" value="3">
+      </label>
 
       <label>Seed
         <input id="seedInput" type="text" value="labyrinth-2026" autocomplete="off">
       </label>
 
-      <button id="generateBtn" class="primary" type="button">Generate</button>
       <button id="randomSeedBtn" type="button">Random Seed</button>
+      <button id="generateBtn" class="primary" type="button">Generate</button>
       <div class="grid-two">
         <button id="showSolutionBtn" type="button">Show Solution</button>
         <button id="hideSolutionBtn" type="button">Hide Solution</button>
       </div>
       <button id="downloadBtn" type="button">Download SVG</button>
       <button id="downloadSolutionBtn" type="button">Download SVG with Solution</button>
-      <p id="errorBox" class="error-box" role="alert" hidden></p>
     </aside>
 
     <section class="preview-card">
@@ -111,10 +74,7 @@
     </section>
   </main>
 
-  <footer class="maze-info" aria-live="polite">
-    <h2>Maze Info</h2>
-    <div id="mazeInfo" class="info-grid">Информация о лабиринте появится после генерации.</div>
-  </footer>
+  <footer id="mazeInfo" class="maze-info">Информация о лабиринте появится после генерации.</footer>
 
   <script src="app.js"></script>
 </body>
