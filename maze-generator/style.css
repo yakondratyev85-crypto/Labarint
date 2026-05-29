@@ -1,0 +1,115 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #1f2937;
+  background: #ffffff;
+}
+.topbar {
+  padding: 22px 28px;
+  border-bottom: 1px solid #e5e7eb;
+  background: #ffffff;
+}
+.topbar h1 { margin: 0 0 6px; font-size: 28px; }
+.topbar p { margin: 0; color: #6b7280; }
+.app-shell {
+  display: grid;
+  grid-template-columns: 320px minmax(0, 1fr);
+  gap: 18px;
+  padding: 18px;
+  min-height: calc(100vh - 170px);
+}
+.controls {
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-weight: 700;
+  font-size: 14px;
+}
+select, input, button {
+  width: 100%;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font: inherit;
+  background: #ffffff;
+}
+button {
+  cursor: pointer;
+  font-weight: 700;
+  color: #111827;
+  transition: background .15s, transform .05s;
+}
+button:hover { background: #e5e7eb; }
+button:active { transform: translateY(1px); }
+button.primary {
+  color: #ffffff;
+  border-color: #2563eb;
+  background: #2563eb;
+}
+button.primary:hover { background: #1d4ed8; }
+.grid-two { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.preview-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  background: #ffffff;
+  padding: 16px;
+  min-width: 0;
+}
+.svg-preview {
+  width: 100%;
+  min-height: 620px;
+  display: grid;
+  place-items: center;
+  overflow: auto;
+  background: #fafafa;
+  border-radius: 10px;
+}
+.svg-preview svg {
+  max-width: 100%;
+  max-height: 78vh;
+  background: #ffffff;
+  box-shadow: 0 8px 26px rgba(15, 23, 42, .08);
+}
+.maze-info {
+  margin: 0 18px 18px;
+  padding: 14px 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #f9fafb;
+  color: #374151;
+}
+.maze-info h2 { margin: 0 0 10px; font-size: 18px; }
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 8px 14px;
+}
+.info-grid span {
+  padding: 8px 10px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+}
+.error-box {
+  margin: 0;
+  padding: 10px 12px;
+  color: #991b1b;
+  background: #fee2e2;
+  border: 1px solid #fecaca;
+  border-radius: 10px;
+  font-weight: 700;
+}
+@media (max-width: 860px) {
+  .app-shell { grid-template-columns: 1fr; }
+  .svg-preview { min-height: 420px; }
+}

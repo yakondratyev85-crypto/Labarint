@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Maze Generator — SVG</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>Генератор лабиринтов</h1>
+    <p>Локальный генератор чистых SVG: без сборки, npm, сервера и внешних библиотек.</p>
+  </header>
+
+  <main class="app-shell">
+    <aside class="controls" aria-label="Настройки лабиринта">
+      <label>Maze Type
+        <select id="mazeType">
+          <option value="rect">Rectangular Maze</option>
+          <option value="circle">Circular Maze</option>
+          <option value="hex">Hex Maze</option>
+          <option value="room">Room / Island Maze</option>
+          <option value="shape">Shape Maze</option>
+        </select>
+      </label>
+
+      <label id="shapeRow">Shape
+        <select id="shapeType">
+          <option value="circle">circle</option>
+          <option value="heart">heart</option>
+          <option value="star">star</option>
+        </select>
+      </label>
+
+      <label>Maze Mode
+        <select id="mazeMode">
+          <option value="classic">Classic</option>
+          <option value="kidsEasy">Kids Easy</option>
+          <option value="puzzle">Puzzle</option>
+          <option value="longPath">Long Path</option>
+          <option value="printClean">Print Clean</option>
+        </select>
+      </label>
+
+      <label>Age Preset
+        <select id="agePreset">
+          <option value="custom">Custom / manual</option>
+          <option value="age45">4–5 years</option>
+          <option value="age67">6–7 years</option>
+          <option value="age89">8–9 years</option>
+          <option value="age10">10+ years</option>
+          <option value="adults">Adults</option>
+        </select>
+      </label>
+
+      <label>Difficulty
+        <select id="difficulty">
+          <option value="veryEasy">Very Easy</option>
+          <option value="easy">Easy</option>
+          <option value="medium" selected>Medium</option>
+          <option value="hard">Hard</option>
+          <option value="expert">Expert</option>
+        </select>
+      </label>
+
+      <label>Start / Finish Position
+        <select id="startFinish">
+          <option value="corners">corners</option>
+          <option value="leftRight">left-to-right</option>
+          <option value="topBottom">top-to-bottom</option>
+          <option value="randomEdges">random edges</option>
+          <option value="longestPath">longest path</option>
+        </select>
+      </label>
+
+      <div class="grid-two">
+        <label>Width
+          <input id="mazeWidth" type="number" min="6" max="80" value="24">
+        </label>
+        <label>Height
+          <input id="mazeHeight" type="number" min="6" max="80" value="18">
+        </label>
+      </div>
+
+      <div class="grid-two">
+        <label>Wall Thickness
+          <input id="wallThickness" type="number" min="1" max="12" value="3">
+        </label>
+        <label>Cell Size
+          <input id="cellSize" type="number" min="12" max="60" value="28">
+        </label>
+      </div>
+
+      <label>Seed
+        <input id="seedInput" type="text" value="labyrinth-2026" autocomplete="off">
+      </label>
+
+      <button id="generateBtn" class="primary" type="button">Generate</button>
+      <button id="randomSeedBtn" type="button">Random Seed</button>
+      <div class="grid-two">
+        <button id="showSolutionBtn" type="button">Show Solution</button>
+        <button id="hideSolutionBtn" type="button">Hide Solution</button>
+      </div>
+      <button id="downloadBtn" type="button">Download SVG</button>
+      <button id="downloadSolutionBtn" type="button">Download SVG with Solution</button>
+      <p id="errorBox" class="error-box" role="alert" hidden></p>
+    </aside>
+
+    <section class="preview-card">
+      <div id="svgPreview" class="svg-preview" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer class="maze-info" aria-live="polite">
+    <h2>Maze Info</h2>
+    <div id="mazeInfo" class="info-grid">Информация о лабиринте появится после генерации.</div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
